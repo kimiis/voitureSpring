@@ -28,6 +28,11 @@ error:
     http-status-in-json-response: true
 
 spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/voitureSpring
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: Sk14529856
   application:
     name: "${APP_NAME:example}"
   tracing:

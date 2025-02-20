@@ -31,6 +31,10 @@ dependencies {
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor:3.1.1")
     annotationProcessor("org.mapstruct:mapstruct-processor:1.5.4.Final")
     annotationProcessor("org.projectlombok:lombok-mapstruct-binding:0.2.0")
+
+    implementation("org.springframework.boot:spring-boot-starter-jdbc")
+    implementation ("org.postgresql:postgresql:42.6.0")
+
 }
 
 tasks.withType<Test> {
