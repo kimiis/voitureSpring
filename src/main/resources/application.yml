@@ -1,0 +1,55 @@
+application:
+  app:
+    host: "${APP_HOST:http://localhost}"
+    name: "${APP_NAME:example}"
+    port: "${APP_PORT:8080}"
+
+server:
+  port: "${APP_PORT:8080}"
+
+app:
+  name: "${APP_NAME:example}"
+
+example:
+  config:
+    message: "Hello, World!"
+    value: "42"
+
+springdoc:
+  show-actuator: false
+  writer-with-default-pretty-printer: true
+  pre-loading-enabled: true
+  default-consumes-media-type: application/json
+  default-produces-media-type: application/json
+
+error:
+  handling:
+    exception-logging: with_stacktrace
+    http-status-in-json-response: true
+
+spring:
+  application:
+    name: "${APP_NAME:example}"
+  tracing:
+    sampling:
+      probability: 1.0
+  endpoint:
+    health:
+      show-details: always
+      show-components: always
+  health:
+    readinessstate:
+      enabled: true
+    livenessstate:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+logging:
+  level:
+    org.springframework.context.support.PostProcessorRegistrationDelegate: OFF
+  pattern:
+    console: "${LOG_PATTERN:%boldMagenta([%thread]) %cyan(%date) %highlight(%-5level) %green([%logger{36}:%line]) : %msg%n}"
+  charset:
+    console: UTF-8
